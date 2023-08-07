@@ -1,6 +1,9 @@
-const elemento = document.querySelector("#calcular");
-const resultado = document.querySelector(".resultado");
+const lista = document.querySelector(".lista");
 
-elemento.addEventListener("click", (evento) => {
-  resultado.innerHTML = "Fui clicado"
-})
+function mostraTintas(this) {
+  lista.addEventListener ("click", function (evento) {
+    evento.target
+  }
+  
+  
+}
