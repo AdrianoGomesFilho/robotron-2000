@@ -52,7 +52,6 @@ button:active {
   padding: 20px;
   list-style-type: none;
   border: 4mm ridge rgba(234, 122, 11, 0.992);
-  display: none;
 }
 
 .alura-logo {
