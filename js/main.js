@@ -15,19 +15,19 @@ const pecas = {
         "energia": 0,
         "velocidade": -20
     },
-    "nucleos":{
+    "nucleos": {
         "forca": 0,
         "poder": 7,
         "energia": 48,
         "velocidade": -24
     },
-    "pernas":{
+    "pernas": {
         "forca": 27,
         "poder": 21,
         "energia": -32,
         "velocidade": 42
     },
-    "foguetes":{
+    "foguetes": {
         "forca": 0,
         "poder": 28,
         "energia": 0,
@@ -38,33 +38,37 @@ const pecas = {
 controle.forEach((elemento) => {
     elemento.addEventListener("click", (evento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode);
-        atualizaEstatisticas (evento.target.dataset.peca)
+        atualizaEstatisticas(evento.target.dataset.peca)
     })
-
-    function manipulaDados(operacao, controle) {
-        const peca = controle.querySelector("[data-contador]")
-        console.log(peca)
-        if(operacao === "+") {
-            peca.value = parseInt(peca.value) + 1;
-        } else if (peca.value > 0){
-            peca.value = parseInt(peca.value) - 1;
-        }
-    }
-
-   
-
-    function atualizaEstatisticas(peca) {
-        estatisticas.forEach( (elemento) => {
-            if (elemento.textContent > 0 || manipulaDados.operacao === "-") {
-                elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]}
-            else {
-                elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]}
-            }
-        )}
-
-        /* problema atual:  estatísticas estão considerando o sinal de menos com menos está dando mais. Procurar forma de driblar a regra de sinais aqui.*/
-
 })
+
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector("[data-contador]")
+    console.log(peca)
+    if (operacao === "+") {
+        peca.value = parseInt(peca.value) + 1;
+    } else if (peca.value > 0) {
+        peca.value = parseInt(peca.value) - 1;
+    }
+    operacaoSinal = operacao
+}
+
+
+
+function atualizaEstatisticas(peca) {
+    estatisticas.forEach( (elemento) => {
+        if (operacaoSinal === "-") {
+            console.log("A")
+            /* elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica] */
+        }
+        else {
+            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]}
+        
+    })
+}
+
+/* problema atual:  estou verificando que não consigo puxar dados de outra função (quero aproveitar o operador do manipulaDados)
+
 
 /* function atualizaEstatistica(peca) {
     estatistica.forEach( (elemento ) => {
