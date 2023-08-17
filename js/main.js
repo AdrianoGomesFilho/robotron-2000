@@ -40,28 +40,31 @@ controle.forEach((elemento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode);
         atualizaEstatisticas (evento.target.dataset.peca)
     })
-})
 
-function manipulaDados(operacao, controle) {
-    const peca = controle.querySelector("[data-contador]")
-    console.log(peca)
-    if(operacao === "+") {
-        peca.value = parseInt(peca.value) + 1;
-    } else if (peca.value > 0){
-        peca.value = parseInt(peca.value) - 1;
-    }
-    atualizaEstatisticas(operacao)
-}
-
-function atualizaEstatisticas(peca, operacao) {
-    estatisticas.forEach( (elemento) => {
-        if (operacao === "+") {
-        elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]}
-        else {
-            elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]}
+    function manipulaDados(operacao, controle) {
+        const peca = controle.querySelector("[data-contador]")
+        console.log(peca)
+        if(operacao === "+") {
+            peca.value = parseInt(peca.value) + 1;
+        } else if (peca.value > 0){
+            peca.value = parseInt(peca.value) - 1;
         }
-    )}
+    }
 
+   
+
+    function atualizaEstatisticas(peca) {
+        estatisticas.forEach( (elemento) => {
+            if (elemento.textContent > 0 || manipulaDados.operacao === "-") {
+                elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]}
+            else {
+                elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]}
+            }
+        )}
+
+        /* problema atual:  estatísticas estão considerando o sinal de menos com menos está dando mais. Procurar forma de driblar a regra de sinais aqui.*/
+
+})
 
 /* function atualizaEstatistica(peca) {
     estatistica.forEach( (elemento ) => {
