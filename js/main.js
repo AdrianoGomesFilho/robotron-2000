@@ -1,6 +1,21 @@
 const controle = document.querySelectorAll("[data-controle]")
 const estatistica = document.querySelectorAll("[data-estatistica]")
-const coresRobo = document.querySelectorAll()
+const cor = document.querySelectorAll("#controle-cor");
+
+function cor(pintura) {
+    if (pintura = )
+    /* switch (pintura) {
+        case red:
+            let imagem = document.querySelector("#robotron");
+            imagem.src = "./cores/vermelho.png";
+            break;
+        case yellow:
+            document.getElementById("#robotron");
+            "#robotron".src = "./cores/amarelo.png";
+            break;
+    } */
+}
+
 
 const pecas = {
     "bracos": {
@@ -35,13 +50,6 @@ const pecas = {
         "velocidade": -2
     }
 }
-
-controle.forEach( (elemento) => {
-    elemento.addEventListener('click', (evento) => {
-        manipulaDados(evento.target.textContent, evento.target.parentNode)
-        atualizaEstatistica(evento.target.dataset.peca)
-    })
-})
 
 controle.forEach( (elemento) => {
     elemento.addEventListener('click', (evento) => {

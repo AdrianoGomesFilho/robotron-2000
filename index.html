@@ -16,7 +16,7 @@
 <body>
     <main>
         <section class="robotron">
-            <img class="robo" src="img/robotron.png" alt="Robotron" id="robotron">
+            <img class="robo" src="cores/azul.png" alt="Robotron" id="robotron">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
         </section>
 
@@ -94,8 +94,19 @@
                             <buttom class="controle-ajuste" data-controle="+" data-peca="foguetes">+</buttom>
                         </div>
                     </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Pintura</label>
+                        <div class="controle">
+                            <buttom onclick="cor(red)" id="red" data-cor="corRed" class="controle-ajuste controle-cor"></buttom>
+                            <buttom onclick="cor(yellow)" id="yellow" data-cor="corYellow" class="controle-ajuste controle-cor"></buttom>
+                            <buttom id="black" data-cor="corBlack" class="controle-ajuste controle-cor"></buttom>
+                            <buttom id="white" data-cor="corWhite" class="controle-ajuste controle-cor"></buttom>
+                            <buttom id="pink" data-cor="corPink" class="controle-ajuste controle-cor"></buttom>
+                            <buttom id="blue" data-cor="corBlue" class="controle-ajuste controle-cor"></buttom>
+                        </div>
+                    </div>
                 </div>
-                <input type="submit" class="producao" id="botaoTrocaCor">
                 <input type="submit" value="Iniciar produção" class="producao" id="producao">
             </form>
         </section>

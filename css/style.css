@@ -136,7 +136,7 @@ main {
     font-size: 2em;
     text-transform: uppercase;
     padding: 0.2em 1em;
-    float: left;
+    float:right;
     border: 3px solid var(--main-branco);
     background: var(--main-branco);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
@@ -152,6 +152,29 @@ main {
     color: var(--main-branco)
 }
 
+#red {
+    background: rgb(114, 0, 0);
+}
+
+#yellow {
+    background: rgb(100, 85, 0);
+}
+
+#black {
+    background: rgb(36, 35, 35);
+}
+
+#white {
+    background: rgb(163, 159, 159);
+}
+
+#pink {
+    background: rgb(109, 1, 100);
+}
+
+#blue {
+    background: rgb(10, 66, 139);
+}
 
 
 /****************************** Estatísticas *****/
