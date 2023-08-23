@@ -1,21 +1,31 @@
-const controle = document.querySelectorAll("[data-controle]")
-const estatistica = document.querySelectorAll("[data-estatistica]")
-const cor = document.querySelectorAll("#controle-cor");
+const controle = document.querySelectorAll("[data-controle]");
+const estatistica = document.querySelectorAll("[data-estatistica]");
+const robotronImagem = document.querySelector("#robotron")
 
 function cor(pintura) {
-    if (pintura = )
-    /* switch (pintura) {
-        case red:
-            let imagem = document.querySelector("#robotron");
-            imagem.src = "./cores/vermelho.png";
+    switch (pintura) {
+        case 'red':
+            robotronImagem.src = "./cores/red.png"
             break;
-        case yellow:
-            document.getElementById("#robotron");
-            "#robotron".src = "./cores/amarelo.png";
+        case 'yellow':
+            robotronImagem.src = "./cores/yellow.png"
             break;
-    } */
+        case 'black':
+            robotronImagem.src = "./cores/black.png"
+            break;
+        case 'white':
+            robotronImagem.src = "./cores/white.png"
+            break;
+        case 'pink':
+            robotronImagem.src = "./cores/pink.png"
+            break;
+        case 'blue':
+            robotronImagem.src = "./cores/blue.png"
+            break;
+        default:
+            console.log("default");
+    }
 }
-
 
 const pecas = {
     "bracos": {
