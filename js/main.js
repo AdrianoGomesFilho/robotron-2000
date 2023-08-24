@@ -23,7 +23,7 @@ function cor(pintura) {
             robotronImagem.src = "./cores/blue.png"
             break;
         default:
-            console.log("default");
+            robotronImagem.src = "./cores/blue.png"
     }
 }
 
