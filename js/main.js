@@ -64,22 +64,29 @@ const pecas = {
 controle.forEach( (elemento) => {
     elemento.addEventListener('click', (evento) => {
         manipulaDados(evento.target.textContent, evento.target.parentNode)
-        atualizaEstatistica(evento.target.dataset.peca)
+        atualizaEstatisticas(evento.target.dataset.peca)
     })
 })
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]")
-
-    if(operacao === "-") {
-        peca.value = parseInd(peca.value) - 1
-    } else {
-        peca.value = parseInt(peca.value) + 1
+    console.log(peca)
+    if (operacao === "+") {
+        peca.value = parseInt(peca.value) + 1;
+    } else if (peca.value > 0) {
+        peca.value = parseInt(peca.value) - 1;
     }
+    operacaoSinal = operacao
 }
 
-function atualizaEstatistica(peca) {
-    estatistica.forEach( (elemento ) => {
-        elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+
+function atualizaEstatisticas(peca) {
+    estatistica.forEach( (elemento) => {
+        if (operacaoSinal === "-" && parseInt(elemento.textContent)>0) {
+           elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
+        }
+        else if (operacaoSinal === "+") {
+            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]}
+        
     })
 }
