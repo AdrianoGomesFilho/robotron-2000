@@ -83,10 +83,10 @@ function manipulaDados(operacao, controle) {
 function atualizaEstatisticas(peca) {
     estatistica.forEach( (elemento) => {
         if (operacaoSinal === "-" && parseInt(elemento.textContent)>0) {
-           elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
+           elemento.textContent = Math.abs(parseInt(elemento.textContent)) - pecas[peca][elemento.dataset.estatistica]
         }
         else if (operacaoSinal === "+") {
-            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]}
-        
+            elemento.textContent = Math.abs(parseInt(elemento.textContent)) + pecas[peca][elemento.dataset.estatistica]
+        }
     })
 }
