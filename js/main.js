@@ -70,23 +70,22 @@ controle.forEach( (elemento) => {
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]")
-    console.log(peca)
     if (operacao === "+") {
         peca.value = parseInt(peca.value) + 1;
     } else if (peca.value > 0) {
         peca.value = parseInt(peca.value) - 1;
     }
-    operacaoSinal = operacao
+    return operacaoSinal = operacao;
 }
-
 
 function atualizaEstatisticas(peca) {
     estatistica.forEach( (elemento) => {
-        if (operacaoSinal === "-" && parseInt(elemento.textContent)>0) {
-           elemento.textContent = Math.abs(parseInt(elemento.textContent)) - pecas[peca][elemento.dataset.estatistica]
+        if (operacaoSinal === "+") {
+            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+
         }
-        else if (operacaoSinal === "+") {
-            elemento.textContent = Math.abs(parseInt(elemento.textContent)) + pecas[peca][elemento.dataset.estatistica]
+        else if (operacaoSinal === "-") {
+            elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
         }
     })
 }
