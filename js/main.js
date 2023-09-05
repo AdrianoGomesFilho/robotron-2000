@@ -61,6 +61,7 @@ const pecas = {
     }
 }
 
+
 controle.forEach( (elemento) => {
     elemento.addEventListener('click', (evento) => {
         manipulaDados(evento.target.textContent, evento.target.parentNode)
@@ -83,7 +84,6 @@ function manipulaDados(operacao, controle) {
         operacaoSinal,
         valorPeca
     };
-    
 }
 
 function atualizaEstatisticas(peca) {
