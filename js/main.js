@@ -72,20 +72,29 @@ function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]")
     if (operacao === "+") {
         peca.value = parseInt(peca.value) + 1;
+        
     } else if (peca.value > 0) {
         peca.value = parseInt(peca.value) - 1;
+       
     }
-    return operacaoSinal = operacao;
+    operacaoSinal = operacao;
+    valorPeca = peca.value;
+    return {
+        operacaoSinal,
+        valorPeca
+    };
+    
 }
 
 function atualizaEstatisticas(peca) {
     estatistica.forEach( (elemento) => {
         if (operacaoSinal === "+") {
             elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-
+            console.log(valorPeca)
         }
-        else if (operacaoSinal === "-") {
+        else if (operacaoSinal === "-" && (valorPeca===1 || valorPeca>0)) {
             elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
+            console.log(valorPeca)
         }
     })
 }
