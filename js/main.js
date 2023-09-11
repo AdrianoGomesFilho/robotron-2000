@@ -81,20 +81,7 @@ function manipulaDados(operacao, controle) {
     operacaoSinal = operacao;
     valorPeca = peca.value;
 
-    if (valorPeca === 0) {
-        return {
-            operacaoSinal,
-            valorPeca = valorPeca++
-        };
-    } else {
-        return {
-            operacaoSinal,
-            valorPeca
-        }
-    }
 }
-
-//Aqui vai gerar valorPeca 0
 
 function atualizaEstatisticas(peca) {
     estatistica.forEach( (elemento) => {
@@ -102,7 +89,7 @@ function atualizaEstatisticas(peca) {
             elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
             console.log(valorPeca)
         }
-        else if (operacaoSinal === "-" && valorPeca>0) /*Aqui quando receber valorPeca 0 não vai diminuir mais*/{
+        else if (operacaoSinal === "-") {
             elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
             console.log(valorPeca)
            
